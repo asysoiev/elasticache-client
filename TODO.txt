@@ -1,0 +1,9 @@
+Spring
+- Simple web endpoint
+
+AWS
+- Redis
+- CloudFormation for preparing ECR
+- CloudFormation for Redis
+- CloudFormation for ECS
+- CloudBuilder for building docker image

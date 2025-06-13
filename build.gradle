@@ -1,0 +1,37 @@
+buildscript {
+	dependencies {
+		//https://github.com/palantir/gradle-docker
+		classpath("com.palantir.gradle.docker:gradle-docker:0.35.0")
+	}
+}
+
+plugins {
+	id 'org.springframework.boot' version '3.5.0'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+apply plugin: 'java'
+apply plugin: 'com.palantir.docker'
+
+group = 'com.sandbox'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+}
+
+bootJar {
+	archiveFileName = "${project.name}.jar"
+}
+
+docker {
+	name "${project.name}:${project.version}"
+	files bootJar.archiveFile
+}
