@@ -1,5 +1,8 @@
 Spring
 - Simple web endpoint
+- get all keys
+- delete all keys
+- override properties for docker container
 
 AWS
 - Redis
@@ -7,3 +10,5 @@ AWS
 - CloudFormation for Redis
 - CloudFormation for ECS
 - CloudBuilder for building docker image
+- ElastiCache memcache
+- ElastiCache ValKey

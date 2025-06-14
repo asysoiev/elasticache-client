@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RedisClusterClient" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="elasticache-client.main" />
+    <option name="PROGRAM_PARAMETERS" value="--spring.config.location=file:config/redis.cluster.properties" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.sandbox.elasticache.ElastiCacheClient" />
+    <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+      <option name="credential" />
+      <option name="region" />
+      <option name="useCurrentConnection" value="false" />
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
