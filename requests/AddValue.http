@@ -13,4 +13,4 @@
         {"key": 10, "value": "value10"},
     ])
 %}
-POST {{endpoint}}/cache?key={{$.keyValue..key}}&value={{$.keyValue..value}}
+POST {{endpoint}}/cache/{{$.keyValue..key}}?value={{$.keyValue..value}}

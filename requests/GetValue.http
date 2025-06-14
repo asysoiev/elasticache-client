@@ -1,1 +1,1 @@
-GET {{endpoint}}/cache?key=1
+GET {{endpoint}}/cache/1

@@ -15,6 +15,11 @@ public class InMemoryCache implements Cache {
     }
 
     @Override
+    public Map<String, String> getAll() {
+        return cache;
+    }
+
+    @Override
     public void addValue(String key, String value) {
         cache.put(key, value);
     }
@@ -27,5 +32,10 @@ public class InMemoryCache implements Cache {
     @Override
     public void deleteValue(String key) {
         cache.remove(key);
+    }
+
+    @Override
+    public void deleteAll() {
+        cache.clear();
     }
 }

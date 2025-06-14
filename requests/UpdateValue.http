@@ -1,1 +1,1 @@
-PUT {{endpoint}}/cache?key=key&value=value
+PUT {{endpoint}}/cache/2?value=value22
