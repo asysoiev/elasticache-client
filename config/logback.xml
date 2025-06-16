@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level [%X{thread}][%t] %logger{1}.%M\(%line\): %m %n%rEx</pattern>
+    </encoder>
+  </appender>
+
+<!--  Print Redis commands-->
+<!--  <logger name="io.lettuce.core" level="DEBUG"/>-->
+
+  <root level="info">
+    <appender-ref ref="Console" />
+  </root>
+
+</configuration>

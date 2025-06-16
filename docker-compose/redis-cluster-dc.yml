@@ -119,6 +119,29 @@ services:
     networks:
       - redis-cluster
 
+# Cluster entry point
+# Use RedisViaHAProxy run configuration to connect through it
+  redis-cluster-endpoint:
+    # Currently the latest version is 3.2
+    image: haproxy:latest
+    container_name: redis-cluster-endpoint
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./RedisCluster/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    depends_on:
+      - redis-node-1
+      - redis-node-2
+      - redis-node-3
+    environment:
+      FRONTEND_PORT: 6379
+      BACKEND_HOST: ${DOCKER_HOST_IP}
+      BACKEND_PORT_1: 7001
+      BACKEND_PORT_2: 7002
+      BACKEND_PORT_3: 7003
+    networks:
+      - redis-cluster
+
 networks:
   redis-cluster:
     driver: bridge
